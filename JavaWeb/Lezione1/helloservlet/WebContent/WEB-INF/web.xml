@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>helloservlet</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>HelloParameters</servlet-name>
+		<servlet-class>net.bcsoft.corsi.servlet.HelloParameters</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>net.bcsoft.corsi.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HelloSession</servlet-name>
+		<servlet-class>net.bcsoft.corsi.servlet.HelloSession</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloParameters</servlet-name>
+		<url-pattern>/helloparameters</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/helloservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HelloSession</servlet-name>
+		<url-pattern>/hellosession</url-pattern>
+	</servlet-mapping>
+</web-app>
