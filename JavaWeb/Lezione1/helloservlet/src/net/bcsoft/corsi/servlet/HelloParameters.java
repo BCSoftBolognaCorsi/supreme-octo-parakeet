@@ -2,6 +2,7 @@ package net.bcsoft.corsi.servlet;
 
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.time.LocalDateTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/HelloParameters")
 public class HelloParameters extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	@Override
+	public void init() throws ServletException {
+		System.out.println("Servlet " + this.getServletName() + " has started at : " + LocalDateTime.now() );
+	}
+	
+	@Override
+	public void destroy() {
+		System.out.println("Servlet " + this.getServletName() + " has stopped at: " + LocalDateTime.now());
+	}
        
     /**
      * @see HttpServlet#HttpServlet()

@@ -45,6 +45,7 @@ Tomcat non implementa tutta la specifica JavaEE, ma solo Servlet, Jsp, EL, WebSo
 Struttura di un'applicazione web in java 
 
 
+Il deployment descriptor : web.xml
 
 Servlet
 Una servlet è una classe Java eseguita lato server che genera il contenuto della risposta da inviare ad un client che ha effettuato una richiesta
