@@ -39,7 +39,7 @@ Sul server deve essere presente un server web che supporta le servlet (chiamato 
 Uno dei piu noti è
 Tomcat (http://tomcat.apache.org)
 Quando una richiesta raggiunge il server, questo cerca la servlet ad essa associata e quest'ultima genera il codice HTML con cui rispondere
-Per ogni richiesta HTTP, il server avvia un thread che richiama i metodi della classe che si occupa di generare la risposta
+Per ogni richiesta HTTP, il server avvia un thread (prendendolo da un pool di thread chiamato connector pool o executor pool) che richiama i metodi della classe che si occupa di generare la risposta
 
 Apache Tomcat è un application server, il cui principale vantaggio è la leggerezza e la facile configurabilità.
 Tomcat è configurato "out-of-the-box" già in modo che possano essere deployate la maggior parte delle
@@ -101,6 +101,9 @@ analogamente, i metodi doPost, doPut, doTrace, doDelete e
 doOptions gestiscono gli altri tipi di richiesta HTTP
 L'oggetto HttpServletRequest passato rappresenta la richiesta
 HTTP e può essere utilizzato per estrarne i vari campi
+
+HttpServletRequest: interfaccia che estende ServletRequest e fornisce l'accesso alle proprietà specifiche di una richiesta HTTP.
+HttpServletResponse: interfaccia che estende ServletResponse e fornisce l'accesso alle proprietà specifiche di una risposta HTTP.
 
 tramite il metodo setContentType(String contentType) di HttpServletResponse si imposta il tipo di dato che verrà restituito;
 da utilizzare prima dell'invio del contenuto della pagina
@@ -175,3 +178,4 @@ getAttribute()
 
 
 Jsp
+
