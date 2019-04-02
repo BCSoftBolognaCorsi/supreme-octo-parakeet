@@ -23,7 +23,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
 			<a class="navbar-brand" href="#"> <img
-				src="http://placehold.it/150x50?text=Logo" alt="">
+				src="http://bcsoft.net/Content/Images/Layout/inlinelogobcsoft.png" style="width:200px;" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -32,14 +32,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="#">Home
+					<li class="nav-item <%= cmd == null ? "active": "" %>"><a class="nav-link" href="http://localhost:8080/hellojsp/viewer">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Services</a>
+					<li class="nav-item  <%= "sign_up".equals(cmd)? "active" : "" %>"><a class="nav-link" href="http://localhost:8080/hellojsp/viewer?cmd=sign_up">Sign Up</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
-					</li>
+
 				</ul>
 			</div>
 		</div>
@@ -51,22 +49,14 @@
 		<!--   <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML or with CSS. For best results, use an SVG image as your logo.</p> -->
 		<% if (cmd == null) { %>
 		<div class="col-md-12">
-		
-			<%@ include file="fragmentExample.jsp"%>
+			<%@ include file="utenti.jsp"  %>
 		</div>
-		<% } else { 
-			pageContext.setAttribute("cmd", cmd, PageContext.REQUEST_SCOPE); 
-
-		%>
-				<div class="col-md-12">
-			<%cmd = cmd + ".jsp" ;%>
-			<jsp:include page="<%= cmd %>" ></jsp:include>
-			
+		<% } else { %>
+		<div class="col-md-12">
+		<% cmd = cmd + ".jsp"; %>
+			<jsp:include page="<%= cmd %>" />	
 		</div>
 		<% } %>
-		
-
-
 	</div>
 
 	<!-- /.container -->
