@@ -5,7 +5,7 @@ Argomenti
 
 
 Esempi
-	- HelloJsp
+	- HelloJsp (crud completo)
 
 
 Jsp
@@ -31,20 +31,20 @@ Scriptlets:
 Cominciano con <% e finiscono con  %>
 
 
-Syntax Elements	Standard 		Syntax	XML Syntax
-Comments	<%--.. --%>		<!-- .. -->
-Declarations	<%! ..%>		<jsp:declaration> .. </jsp:declaration>
-Directives	<%@ include .. %>	<jsp:directive.include .. />
-		<%@ page .. %>		<jsp:directive.page .. />
-		<%@ taglib .. %>	xmlns:prefix="tag library URL"
-Expressions	<%= ..%>		<jsp:expression> .. </jsp:expression>
-Scriptlets	<% ..%>			<jsp:scriptlet> .. </jsp:scriptlet>
+Syntax 			Elements	Standard 		Syntax	XML Syntax
+Comments		<%--.. --%>					<!-- .. -->
+Declarations	<%! ..%>					<jsp:declaration> .. </jsp:declaration>
+Directives		<%@ include .. %>			<jsp:directive.include .. />
+				<%@ page .. %>				<jsp:directive.page .. />
+				<%@ taglib .. %>			xmlns:prefix="tag library URL"
+Expressions		<%= ..%>					<jsp:expression> .. </jsp:expression>
+Scriptlets		<% ..%>						<jsp:scriptlet> .. </jsp:scriptlet>
 
 
 Oggetti impliciti in Jsp
 request		HttpServletRequest associato alla richiesta HTTP
 response	HttpServletResponse associata con la risposta per il client
-out		PrintWriter utilizzato per inviare l'ouput al client
+out			PrintWriter utilizzato per inviare l'ouput al client
 session		HttpSession associata alla richiesta
 application	ServletContext associato con il contesto dell'applicazione
 config		ServletConfig associato alla pagina
@@ -58,6 +58,8 @@ sono create e mantenute da sviluppatori Java
 le JSP Sono codice HTML che supporta anche le istruzioni Java
 Sono utilizzate per sviluppare il presentation layer di una applicazione web
 Sono spesso utilizzate per disegnare siti web e utilizzate dai web designer
+
+
 
 
 
