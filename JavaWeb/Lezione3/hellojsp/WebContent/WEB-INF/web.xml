@@ -13,8 +13,8 @@
   	<filter-name>AuthFilter</filter-name>
   	<filter-class>net.bcsoft.corsi.filters.AuthFilter</filter-class>
   	<init-param>
-  		<param-name>excludedUrl</param-name>
-  		<param-value>none</param-value>
+  		<param-name>excudedUrl</param-name>
+  		<param-value>a,b,c</param-value>
   	</init-param>
   </filter>
   <servlet>

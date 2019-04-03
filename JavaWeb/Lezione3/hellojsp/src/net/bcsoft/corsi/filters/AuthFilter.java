@@ -1,6 +1,7 @@
 package net.bcsoft.corsi.filters;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebFilter("/AuthFilter")
 public class AuthFilter implements Filter {
-	 private List<String> excludedUrls;
+	 private List<String> excludedUrls = new ArrayList<>();
 
     /**
      * Default constructor. 
@@ -74,7 +75,8 @@ public class AuthFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 		String excludedUrl = fConfig.getInitParameter("excudedUrl");
-		excludedUrls = Arrays.asList(excludedUrl.split(","));
+		if(excludedUrl != null)
+			excludedUrls = Arrays.asList(excludedUrl.split(","));
 		
 	}
 
