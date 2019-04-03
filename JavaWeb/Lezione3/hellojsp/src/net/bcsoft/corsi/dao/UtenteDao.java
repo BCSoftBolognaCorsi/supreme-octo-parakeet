@@ -57,8 +57,47 @@ public class UtenteDao {
 		
 	}
 	
+	public static void deleteUtente(Long idUtente) throws SQLException {
+		String queryDelete = "DELETE FROM utenti WHERE id=?";
+		ArrayList<Object> parameterList = new ArrayList<>();
+		parameterList.add(idUtente);
+
+		Connection con = new Connection("root", "root", "help_desk");
+		con.connect();
+		con.preparedStatement(queryDelete, parameterList);
+		con.disconnect();
+		
+		
+		
+	}
 	
-	public List<Utente>  getUtenti() throws SQLException {
+	
+	public static  Utente getUtente(Long idUtente) throws SQLException {
+		String querySelect = "SELECT * FROM utenti WHERE id=?";
+		ArrayList<Object> parameterList = new ArrayList<>();
+		parameterList.add(idUtente);
+		Utente result = null;
+		Connection con = new Connection("root", "root", "help_desk");
+		con.connect();
+		try(ResultSet rs = con.preparedStatement(querySelect, parameterList)) {
+			if(rs.next()) {
+				Integer id = rs.getInt(1);
+				String nome = rs.getString(2);
+				String email = rs.getString(3);
+				Integer eta = rs.getInt(4);
+				String linguaggi = rs.getString(5);
+				result = Dto2ModelService.createModel(id, nome, email, eta, linguaggi);
+			}
+				
+		} 
+		con.disconnect();
+		
+		return result;
+		
+	}
+	
+	
+	public static  List<Utente>  getUtenti() throws SQLException {
 		String querySelect = "SELECT * FROM utenti ORDER BY nome;";
 		List<Utente> result = new ArrayList<>();
 

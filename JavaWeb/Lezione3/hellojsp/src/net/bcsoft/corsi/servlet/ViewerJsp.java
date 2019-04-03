@@ -1,6 +1,7 @@
 package net.bcsoft.corsi.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import net.bcsoft.corsi.dao.UtenteDao;
+import net.bcsoft.corsi.models.Utente;
 
 /**
  * Servlet implementation class HelloJsp
@@ -29,8 +33,45 @@ public class ViewerJsp extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-		dispatcher.forward(request, response);
+		String operazione = request.getParameter("op");
+		String idUtente = request.getParameter("idUtente");
+		if(idUtente != null) {
+			try {
+				Utente utente =UtenteDao.getUtente(Long.valueOf(idUtente));
+				request.setAttribute("utente", utente);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if("DEL".equals(operazione)) {
+			try {
+				UtenteDao.deleteUtente(Long.valueOf(idUtente));
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if("sign_out".equals(operazione)) {
+			request.getSession().invalidate();
+			response.sendRedirect("login.jsp");
+		} else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+			dispatcher.forward(request, response);
+		}
+
+			
+			
+		
+
 	}
 
 	/**
