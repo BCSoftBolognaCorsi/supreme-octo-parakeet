@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>hellojsp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+  	<filter-name>AuthFilter</filter-name>
+  	<filter-class>net.bcsoft.corsi.filters.AuthFilter</filter-class>
+  </filter>
+  <servlet>
+    <servlet-name>Viewer</servlet-name>
+    <servlet-class>net.bcsoft.corsi.servlet.ViewerJsp</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>HelloJsp</servlet-name>
+    <servlet-class>net.bcsoft.corsi.servlet.HelloJsp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Viewer</servlet-name>
+    <url-pattern>/viewer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelloJsp</servlet-name>
+    <url-pattern>/hellojsp</url-pattern>
+  </servlet-mapping>
+  <filter-mapping>
+  	<filter-name>AuthFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

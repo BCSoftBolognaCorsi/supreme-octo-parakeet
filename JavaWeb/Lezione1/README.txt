@@ -8,7 +8,7 @@ Argomenti
 	- Servlet
 	- Servlet Lifecycle
 	- Sessioni Http
-	- Jsp 
+
 
 Eclipse
 	- Installazione di tomcat
@@ -16,7 +16,7 @@ Eclipse
 
 Esempi
 	- HelloServlet
-	- HelloJsp
+
 
 Per approfondimenti
 	- https://www.slideshare.net/sunilos/jspservlet
@@ -177,5 +177,17 @@ getAttribute()
 
 
 
-Jsp
+
+
+
+
+
+Installazione di tomcat in Eclipse
+- Abilitare la perspective JavaEE
+- Tab "Servers" -> "Create a new server" -> Selezionare Tomcat v(X.x) Server dalla lista -> Indicare la directory nel filesystem dove è stato scaricato Apache Tomcat
+
+Creare un dynamic web project in eclipse
+- File -> New -> Dynamic Web Project
+- Verificare che il 'Target runtime' sia associato correttamente all'application server installato in eclipse
+- Effettuare la spunta nell'ultima schermata di configurazione su 'Generate webxml deployment descriptor'
 

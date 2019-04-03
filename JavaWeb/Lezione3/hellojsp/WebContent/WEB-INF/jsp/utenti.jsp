@@ -36,9 +36,7 @@
 					<td><%=utente.getEmail()%></td>
 					<td><%=utente.getEta()%></td>
 					<td><%=utente.getLinguaggi().stream().collect(Collectors.joining(",")) %></td>
-					<td><a href="http://localhost:8080/hellojsp/viewer?op=DEL&idUtente=<%=utente.getId()%>"><i class="fas fa-trash-alt"></i></a>
-						<a href="http://localhost:8080/hellojsp/viewer?cmd=sign_up&idUtente=<%=utente.getId()%>"><i class="fas fa-edit"></i></a>
-					</td>
+					<td></td>
 				</tr>
 				<%
 					}

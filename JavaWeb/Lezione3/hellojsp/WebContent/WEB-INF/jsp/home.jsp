@@ -13,24 +13,17 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	crossorigin="anonymous">
-
-
 <title>Home</title>
 </head>
 <body>
-	<%
-		String cmd = request.getParameter("cmd");
-	%>
+<% 
+	String cmd = request.getParameter("cmd");
+%>
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
 			<a class="navbar-brand" href="#"> <img
-				src="http://bcsoft.net/Content/Images/Layout/inlinelogobcsoft.png"
-				style="width: 200px;" alt="">
+				src="http://bcsoft.net/Content/Images/Layout/inlinelogobcsoft.png" style="width:200px;" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -39,14 +32,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item <%=cmd == null ? "active" : ""%>"><a
-						class="nav-link" href="http://localhost:8080/hellojsp/viewer">Home
+					<li class="nav-item <%= cmd == null ? "active": "" %>"><a class="nav-link" href="http://localhost:8080/hellojsp/viewer">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item  <%="sign_up".equals(cmd) ? "active" : ""%>"><a
-						class="nav-link"
-						href="http://localhost:8080/hellojsp/viewer?cmd=sign_up">Sign
-							Up</a></li>
+					<li class="nav-item  <%= "sign_up".equals(cmd)? "active" : "" %>"><a class="nav-link" href="http://localhost:8080/hellojsp/viewer?cmd=sign_up">Sign Up</a>
+					</li>
 
 				</ul>
 			</div>
@@ -57,24 +47,16 @@
 	<div class="container">
 		<!--   <h1 class="mt-4">Logo Nav by Start Bootstrap</h1> -->
 		<!--   <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML or with CSS. For best results, use an SVG image as your logo.</p> -->
-		<%
-			if (cmd == null) {
-		%>
+		<% if (cmd == null) { %>
 		<div class="col-md-12">
-			<%@ include file="utenti.jsp"%>
+			<%@ include file="utenti.jsp"  %>
 		</div>
-		<%
-			} else {
-		%>
+		<% } else { %>
 		<div class="col-md-12">
-			<%
-				cmd = cmd + ".jsp";
-			%>
-			<jsp:include page="<%=cmd%>" />
+		<% cmd = cmd + ".jsp"; %>
+			<jsp:include page="<%= cmd %>" />	
 		</div>
-		<%
-			}
-		%>
+		<% } %>
 	</div>
 
 	<!-- /.container -->
