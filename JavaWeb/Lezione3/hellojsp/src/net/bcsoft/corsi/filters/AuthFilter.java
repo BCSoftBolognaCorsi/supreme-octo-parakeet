@@ -1,6 +1,8 @@
 package net.bcsoft.corsi.filters;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.Filter;
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebFilter("/AuthFilter")
 public class AuthFilter implements Filter {
+	 private List<String> excludedUrls;
 
     /**
      * Default constructor. 
@@ -39,7 +42,9 @@ public class AuthFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		// place your code here
+		
+		String path = ((HttpServletRequest) request).getServletPath();
+		
 		System.out.println("doFilter:IN");
 		// pass the request along the filter chain
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
@@ -50,7 +55,7 @@ public class AuthFilter implements Filter {
 			httpRequest.getSession().setAttribute("auth", true);
 		
 		}
-
+		
 		Optional<HttpSession> session = Optional.ofNullable(httpRequest.getSession(false));
 		
 		System.out.println("doFilter:OUT");
@@ -68,6 +73,9 @@ public class AuthFilter implements Filter {
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		String excludedUrl = fConfig.getInitParameter("excudedUrl");
+		excludedUrls = Arrays.asList(excludedUrl.split(","));
+		
 	}
 
 }
