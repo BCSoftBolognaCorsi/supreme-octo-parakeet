@@ -40,6 +40,8 @@ legend { font-weight: bold; }
   <form name="car" action="add" method="post">
   	Make : <input type="text" name="make" />	<br/>
   	Model: <input type="text" name="model" />	<br/>
+  	Year: <input type="text" name="year" />	<br/>
+  	
   	<input type="submit" value="   Save   " />
   </form>
   </fieldset>
