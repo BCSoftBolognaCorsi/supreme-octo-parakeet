@@ -1,4 +1,4 @@
-package com.baeldung.freemarker.model;
+package net.bcsoft.model;
 
 public class Car {
 

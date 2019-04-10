@@ -1,8 +1,8 @@
-package com.baeldung.freemarker.service;
+package net.bcsoft.service;
 
 import org.springframework.stereotype.Service;
 
-import com.baeldung.freemarker.model.Car;
+import net.bcsoft.model.Car;
 
 @Service
 public class CarService {

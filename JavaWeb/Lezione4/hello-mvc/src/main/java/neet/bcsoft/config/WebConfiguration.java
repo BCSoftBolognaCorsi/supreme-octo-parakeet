@@ -1,4 +1,4 @@
-package com.baeldung.freemarker.config;
+package neet.bcsoft.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
