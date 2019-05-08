@@ -1,0 +1,64 @@
+<table id="usersTable" class="table  table-hover table-sm table-bordered">
+
+  <thead>
+      <!--<tr class='tr-header'>-->
+        <tr>
+          <th>
+              Id
+          </th>
+          <th>
+              Nome
+          </th>
+          <th>
+              Cognome
+          </th>
+          <th>
+            Azioni
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users"> 
+      <td>
+        {{user.id}}
+      </td>
+      <td>
+        {{user.nome}}
+      </td>
+      <td>
+        {{user.cognome}}
+      </td>
+      <td>
+          <div class="row">
+              <div class="col-sm-3">
+                  <button  class="btn btn-info btn-sm">Dettaglio</button>
+              </div>
+              <div class="col-sm-3">
+                  <button (click)="deleteUtente(user)"  class="btn btn-danger btn-sm">Elimina</button>
+              </div>
+              <div class="col-sm-3">
+                  <button (click)="updateUtente(user)"  class="btn btn-warning btn-sm">Modifica</button>
+              </div>
+            </div>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+<nav aria-label="Page navigation example" >
+  <ul class="pagination">
+    <li  class="page-item"><a class="page-link" >Precedente</a></li>
+    <li> <a class="page-link">1</a></li>
+    <li class="page-item"><a class="page-link" >Successivo</a></li>
+    <li class="page-item">
+      <select name="valoriSizePaginazione" class="select select-sm">
+        <option>10</option>
+        <option>20</option>
+      </select>
+    </li>
+
+  </ul>
+
+</nav>
+
