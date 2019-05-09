@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container-fluid">
+
+  <div style="text-align:center" class="row">
+    <div class="col-md-12">
+        <h1>
+            {{ title }}
+        </h1>
+    </div>
+  </div>
+
+  <a [routerLink]="['/utenti/nuovo']" routerLinkActive="router-link-active"  href="#" id="btnNewUser" class="btn btn-success">New User</a>
+    <div class="row">
+      <div class="col-md-12">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>
+
+
