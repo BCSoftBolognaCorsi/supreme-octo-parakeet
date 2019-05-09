@@ -1,0 +1,20 @@
+
+<form #f="ngForm"><!--{{ f | json}}-->
+  <input [ngModel]="user.id" type="hidden" name="id">
+  <div class="form-group">
+      <label for='firstName'>First Name</label>
+      <input class="form-control"  [(ngModel)]="user.nome" type="text" name='firstName' id='firstName'/>
+  </div>
+
+  <div class="form-group">
+      <label for='lastName'>Last Name</label>
+      <input class='form-control' [(ngModel)]="user.cognome" type='text' name='lastName' id='lastName'>
+  </div>
+  <div>
+      <!-- <button class="btn-save" (click)="saveUser()">Save</button>
+      <button class="btn-reset" (click)="resetForm()">Reset</button> -->
+      <button class="btn btn-success buttons" (click)="saveUser()">Save</button>
+      <button class="btn btn-warning buttons" (click)="resetForm()">Reset</button>
+      <button class="btn btn-info buttons" (click)="backToUsers()">Back</button>
+  </div>
+</form>
