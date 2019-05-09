@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "nome": "Marco",
+      "cognome": "Rossi",
+      "id": 3
+    },
+    {
+      "nome": "Laura",
+      "cognome": "Rossi",
+      "id": 4
+    },
+    {
+      "nome": "alfa",
+      "cognome": "alfa",
+      "id": 5
+    }
+  ]
+}
